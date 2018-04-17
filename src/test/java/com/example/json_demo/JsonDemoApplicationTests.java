@@ -32,9 +32,6 @@ public class JsonDemoApplicationTests {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    @Autowired
-    private StudentController studentController;
-
     private Gson gson = new Gson();
 
     /** 向http://localhost:$post/json 发送GET请求，获取全部的学生列表 */
@@ -69,7 +66,7 @@ public class JsonDemoApplicationTests {
         final String randomStudentName = UUID.randomUUID().toString();
         final String randomStudentNumber = UUID.randomUUID().toString();
         /*客户端创建学生对象*/
-        final Student student = new Student(randomStudentName, randomStudentNumber);
+        final Student student = new Student(randomStudentNumber, randomStudentName);
         System.out.println("student = " + student);
 
         /*客户端进行JavaBean -> String的转换*/
@@ -107,7 +104,7 @@ public class JsonDemoApplicationTests {
         final String randomStudentName = UUID.randomUUID().toString();
         final String randomStudentNumber = UUID.randomUUID().toString();
         /*客户端创建学生对象*/
-        final Student student = new Student(randomStudentName, randomStudentNumber);
+        final Student student = new Student(randomStudentNumber, randomStudentName);
 
         /*客户端进行JavaBean -> String的转换*/
         final String json = gson.toJson(student);
