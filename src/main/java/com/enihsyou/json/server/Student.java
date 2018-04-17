@@ -1,4 +1,4 @@
-package com.example.json_demo;
+package com.enihsyou.json.server;
 
 import org.hibernate.annotations.NaturalId;
 

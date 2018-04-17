@@ -1,4 +1,4 @@
-package com.example.json_demo;
+package com.enihsyou.json.server;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;

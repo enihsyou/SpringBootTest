@@ -2,6 +2,7 @@
 
 1. 使用IntelliJ IDEA或者Android Studio打开项目
 ![打开项目的方法](img/Snipaste_2018-04-17_16-54-26.png)
+![打开项目的方法 Step.2](img/Snipaste_2018-04-17_16-57-11.png)
 
 3. 去 `Student` 类中，添加Getter Setter等JavaBean的方法
 
