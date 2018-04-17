@@ -35,8 +35,8 @@ public class StudentController {
      */
     @GetMapping(value = "/json", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String listStudentsUsingGson() {
-
-        return ""; // todo
+        final List<Student> students = listStudents();
+        return gson.toJson(students);
     }
 
     /**
@@ -50,8 +50,9 @@ public class StudentController {
      */
     @PostMapping(value = "/json", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String createStudentsUsingGson(@RequestBody String studentString) {
-
-        return ""; // todo
+        final Student student = gson.fromJson(studentString, Student.class);
+        createStudent(student);
+        return listStudentsUsingGson();
     }
 
     //
@@ -95,8 +96,8 @@ public class StudentController {
      */
     @PostMapping("/students")
     public List<Student> createStudent(@RequestBody Student student) {
-        // fixme 如果传来的[student.number]是重复的，数据库会抛出错误，需要解决这个问题
-        studentRepository.save(student);
+        if (studentRepository.findByNumber(student.getNumber()) == null)
+            studentRepository.save(student);
         return listStudents();
     }
 
