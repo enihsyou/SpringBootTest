@@ -1,0 +1,56 @@
+# 获取Json格式的列表
+GET http://localhost:10888/json
+
+###
+# 获取Json格式的列表
+POST http://localhost:10888/json
+Content-Type: application/json
+
+{
+  "number":"114",
+  "name":"name2"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################
+
+
+
+###
+# 获取列表
+GET http://localhost:10888/students
+
+###
+# 新建一个学生到数据库
+POST http://localhost:10888/students
+Content-Type: application/json
+
+{
+  "number":"114",
+  "name":"name2"
+}
+
+###
+# 通过name搜索
+GET http://localhost:10888/students?name=name2
+
+###
+# 通过number搜索
+GET http://localhost:10888/students/number/114
+
+###
