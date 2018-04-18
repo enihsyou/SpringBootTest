@@ -21,3 +21,4 @@ IntelliJ IDEA的操作步骤如下，Android Studio的只需要点Run就行。
 
 
 ~~参考答案请切换到 *answer* 分支~~
+![答案对比方式](img/Snipaste_2018-04-18_18-24-55.png)
