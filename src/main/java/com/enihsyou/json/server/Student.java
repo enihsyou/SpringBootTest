@@ -23,10 +23,10 @@ public class Student {
     private String name;
 
     /** JavaBean需要一个无参数的构造器 */
-    Student() {
+    public Student() {
     }
 
-    Student(final String number, final String name) {
+    public Student(final String number, final String name) {
         this.number = number;
         this.name = name;
     }
