@@ -105,8 +105,8 @@ public class StudentController {
      */
     @PostMapping("/students")
     public List<Student> createStudent(@RequestBody Student student) {
-        if (studentRepository.findByNumber(student.getNumber()) == null)
-            studentRepository.save(student);
+        // fixme 如果传来的[student.number]是重复的，数据库会抛出错误，需要解决这个问题
+        studentRepository.save(student);
         return listStudents();
     }
 
