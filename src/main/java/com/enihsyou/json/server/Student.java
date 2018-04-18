@@ -15,7 +15,7 @@ public class Student {
     @GeneratedValue
     private Long id;
 
-    /** 学号，添加了unique限制 */
+    /** 学号，NaturalId这个注解 添加了unique限制 */
     @NaturalId
     private String number;
 

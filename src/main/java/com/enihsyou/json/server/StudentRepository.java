@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/** DAO */
+/** DAO，不需要自己实现，框架会替我们完成实现接口的工作 */
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 

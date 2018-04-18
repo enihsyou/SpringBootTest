@@ -11,9 +11,9 @@
 
 1. 去 [`Student`](src/main/java/com/enihsyou/json/server/Student.java#L9-L37) 类中，添加Getter Setter等JavaBean的方法
 
-2. 去 [`StudentController`](src/main/java/com/enihsyou/json/server/StudentController.java#L15-L116) 类中，
-完成 [`listStudentsUsingGson`](src/main/java/com/enihsyou/json/server/StudentController.java#L31-L40)
-和 [`createStudentsUsingGson`](src/main/java/com/enihsyou/json/server/StudentController.java#L42-L55) 这两个方法
+2. 去 [`StudentController`](src/main/java/com/enihsyou/json/server/StudentController.java#L17-L125) 类中，
+完成 [`listStudentsUsingGson`](src/main/java/com/enihsyou/json/server/StudentController.java#L34-L45)
+和 [`createStudentsUsingGson`](src/main/java/com/enihsyou/json/server/StudentController.java#L47-L64) 这两个方法
 
 3. 运行 [`JsonDemoApplicationTests`](src/test/java/com/enihsyou/json/server/JsonDemoApplicationTests.java#L23-L139) 进行测试。
 IntelliJ IDEA的操作步骤如下，Android Studio的只需要点Run就行。
@@ -23,6 +23,7 @@ IntelliJ IDEA的操作步骤如下，Android Studio的只需要点Run就行。
 > Warning: Working directory '...../.idea/modules' doesn't exist
 
 请把 `Run/Debug Configurations`里的`Working directory`改成`%MODULE_WORKING_DIR%`
+
 （善用`Ctrl+Shift+A` (`⌘+⇧+A`) 搜索功能）
 
 4. [`test.http`](src/main/java/com/enihsyou/json/server/test.http) 是个请求的模拟发送器。
@@ -34,4 +35,5 @@ IntelliJ IDEA的操作步骤如下，Android Studio的只需要点Run就行。
 
 ---
 ~~参考答案请切换到 *answer* 分支~~
+
 ![切换方式](img/Snipaste_2018-04-18_20-35-34.png)
