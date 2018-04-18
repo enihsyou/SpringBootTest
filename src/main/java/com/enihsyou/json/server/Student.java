@@ -32,6 +32,6 @@ public class Student {
     }
 
     // fixme 一个JavaBean需要getter setter方法，需要实现equals hashCode方法
-    // 注意，如果没有getter setter方法，json化会失败
+    // 注意，如果没有 可见性为public的 getter setter方法，json化会失败
     // 尝试使用IntelliJ IDEA的 `Alt+Insert (⌘+N、⌃+↩)` 快捷方法
 }
