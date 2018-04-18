@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /*参考资料：https://spring.io/guides/gs/rest-service/*/
@@ -21,15 +23,18 @@ public class StudentController {
 
     /**
      * 引用一个数据库访问器(DAO)，直接使用就行，不需要new
+     * 运行中通过框架，进行实例的依赖注入
      * 这个仓库具有很多操作数据库的快捷方法
      */
     private final StudentRepository studentRepository;
 
-    /** 创建一个Gson对象 */
+    /** 创建好的一个Gson对象 */
     private Gson gson = new Gson(); // todo 可以调教这个对象，使他输出的字符串是格式化后的，具有缩进格式
 
     /**
      * todo 实现这个方法，使他能接受来自http://localhost:10888/json 的GET请求
+     * GetMapping的意思是，这个方法处理GET请求
+     * 相当于Servlet的doGet方法 {@link javax.servlet.http.HttpServlet#doGet(HttpServletRequest, HttpServletResponse)}
      *
      * @return 数据库里所有学生的列表Json字符串
      */
@@ -43,7 +48,11 @@ public class StudentController {
      * todo 实现这个方法，使他能接受来自http://localhost:10888/json 的POST请求
      * 如果遇到传来的对象具有重复的学生学号，不应该添加到数据库里
      *
-     * @param studentString 需要创建的学生的Json字符串，格式如
+     * PostMapping的意思是，这个方法处理POST请求
+     * 相当于Servlet的doPost方法 {@link javax.servlet.http.HttpServlet#doPost(HttpServletRequest, HttpServletResponse)}
+     *
+     * @param studentString POST请求传过来的body
+     *                      需要创建的学生的Json字符串，格式如
      *                      {@code {"number":"114","name":"name2"}}
      *
      * @return 数据库里所有学生的列表Json字符串
