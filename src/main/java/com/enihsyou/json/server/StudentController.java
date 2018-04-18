@@ -40,8 +40,8 @@ public class StudentController {
      */
     @GetMapping(value = "/json", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String listStudentsUsingGson() {
-        final List<Student> students = listStudents();
-        return gson.toJson(students);
+
+        return "";
     }
 
     /**
@@ -59,9 +59,8 @@ public class StudentController {
      */
     @PostMapping(value = "/json", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String createStudentsUsingGson(@RequestBody String studentString) {
-        final Student student = gson.fromJson(studentString, Student.class);
-        createStudent(student);
-        return listStudentsUsingGson();
+
+        return "";
     }
 
     //
@@ -105,7 +104,7 @@ public class StudentController {
      */
     @PostMapping("/students")
     public List<Student> createStudent(@RequestBody Student student) {
-        // fixme 如果传来的[student.number]是重复的，数据库会抛出错误，需要解决这个问题
+        // todo fixme 如果传来的[student.number]是重复的，数据库会抛出错误，需要解决这个问题
         studentRepository.save(student);
         return listStudents();
     }
