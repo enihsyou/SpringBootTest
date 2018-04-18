@@ -14,4 +14,12 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     /** 通过 {@link Student#name} 获取一个学生列表，因为一个名字可以对应多个学生 */
     List<Student> findByName(String name);
+
+    /** 获取数据库里全部的 {@link Student}对象 */
+    @Override
+    List<Student> findAll();
+
+    /** 保存一个{@link Student}对象到数据库中 */
+    @Override
+    <S extends Student> S save(S entity);
 }
